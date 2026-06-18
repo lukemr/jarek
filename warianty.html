@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.P.H.U. „Cichoński” — Warianty designu strony</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23C0252F'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='white' text-anchor='middle' font-style='italic'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F5F1EA;--ink:#2A2420;--muted:#7A6C5D;--red:#C0252F;--line:rgba(42,36,32,.12);--shadow:0 24px 50px -28px rgba(42,36,32,.45)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:64px 28px 80px}
+  .brand{text-align:center;margin-bottom:10px}
+  .brand .s{font-family:'Dancing Script',cursive;font-size:2.6rem;color:var(--red);line-height:.9}
+  .brand .t{font-size:.62rem;font-weight:600;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
+  h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(1.9rem,4vw,2.8rem);text-align:center;margin:26px 0 8px;letter-spacing:-.01em}
+  .sub{text-align:center;color:var(--muted);max-width:60ch;margin:0 auto 48px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .25s}
+  .card:hover{transform:translateY(-5px)}
+  .sw{height:120px;display:flex;align-items:flex-end;padding:16px;position:relative}
+  .sw .num{font-family:'Playfair Display',serif;font-size:2.4rem;color:rgba(255,255,255,.92)}
+  .c1 .sw{background:linear-gradient(120deg,#15140F,#3a3730)}
+  .c2 .sw{background:linear-gradient(120deg,#17130E,#5a4427)}
+  .c3 .sw{background:linear-gradient(120deg,#B5673F,#8a4a28)}
+  .c4 .sw{background:linear-gradient(120deg,#C0252F,#7c1820)}
+  .bd{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .bd .tag{font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+  .bd h2{font-family:'Playfair Display',serif;font-size:1.5rem;margin:8px 0 8px}
+  .bd p{color:var(--muted);font-size:.93rem;flex:1}
+  .bd a{margin-top:18px;display:inline-flex;align-items:center;gap:8px;align-self:flex-start;font-weight:600;font-size:.92rem;color:#fff;background:var(--ink);padding:12px 22px;border-radius:6px;transition:.2s}
+  .bd a:hover{background:var(--red)}
+  .note{margin-top:42px;text-align:center;color:var(--muted);font-size:.88rem}
+  @media(max-width:680px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="s">Cichoński</div><div class="t">Producent Mebli</div></div>
+  <h1>Warianty designu strony</h1>
+  <p class="sub">Cztery propozycje wyglądu strony — każda z prawdziwymi zdjęciami realizacji. Otwórz i porównaj, a wybrany wariant dopracujemy.</p>
+  <div class="grid">
+    <div class="card c1"><div class="sw"><span class="num">01</span></div><div class="bd"><span class="tag">Jasny · edytorialny</span><h2>Nowoczesny</h2><p>Pełnoekranowe zdjęcia, dużo bieli, mocna typografia i asymetryczna galeria. Czysty, współczesny charakter.</p><a href="wariant-nowoczesny.html">Otwórz stronę →</a></div></div>
+    <div class="card c2"><div class="sw"><span class="num">02</span></div><div class="bd"><span class="tag">Ciemny · ekskluzywny</span><h2>Premium</h2><p>Ciemne tło, eleganckie szeryfy i złote akcenty. Kinowy, luksusowy klimat pracowni mebli.</p><a href="wariant-premium.html">Otwórz stronę →</a></div></div>
+    <div class="card c3"><div class="sw"><span class="num">03</span></div><div class="bd"><span class="tag">Ciepły · katalogowy</span><h2>Showroom</h2><p>Boczne menu, ciepła kremowa paleta i lookbook realizacji w stylu magazynu wnętrzarskiego.</p><a href="wariant-showroom.html">Otwórz stronę →</a></div></div>
+    <div class="card c4"><div class="sw"><span class="num">04</span></div><div class="bd"><span class="tag">Rzemieślniczy · oryginalny</span><h2>Klasyczny</h2><p>Pierwsza wersja — ciepła, z ręcznie rysowaną ilustracją w nagłówku i czerwienią z logo.</p><a href="index.html">Otwórz stronę →</a></div></div>
+  </div>
+  <p class="note">F.P.H.U. „Cichoński” · ul. Solskiego 37, Brzesko · tel. 503 049 587</p>
+</div>
+</body>
+</html>

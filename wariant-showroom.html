@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F.P.H.U. „Cichoński” — Meble na wymiar | Brzesko</title>
+<meta name="description" content="Producent mebli na wymiar z Brzeska od 1999 roku. Kuchnie, szafy, zabudowy — zobacz nasz lookbook realizacji.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23B5673F'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='white' text-anchor='middle' font-style='italic'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6EF;--paper:#fff;--sand:#F0E7D9;--ink:#2A241E;--muted:#7C7165;--acc:#B5673F;--acc-d:#974F2C;
+    --line:rgba(42,36,30,.12);--sbw:284px;--maxw:1080px;
+    --serif:'Fraunces',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--script:'Dancing Script',cursive;
+    --shadow:0 26px 56px -30px rgba(42,36,30,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1;letter-spacing:-.01em}
+  .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--acc)}
+  .lead{color:var(--muted);font-size:1.06rem}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:.9rem;padding:14px 26px;border-radius:40px;border:1.5px solid transparent;cursor:pointer;transition:.25s}
+  .btn svg{width:16px;height:16px}
+  .btn-acc{background:var(--acc);color:#fff}.btn-acc:hover{background:var(--acc-d);transform:translateY(-2px)}
+  .btn-out{border-color:var(--line);color:var(--ink)}.btn-out:hover{border-color:var(--ink)}
+
+  /* sidebar */
+  .side{position:fixed;left:0;top:0;height:100vh;width:var(--sbw);background:var(--paper);border-right:1px solid var(--line);display:flex;flex-direction:column;padding:34px 30px;z-index:60}
+  .brand{display:flex;flex-direction:column;line-height:.92}
+  .brand .f{font-family:var(--serif);font-style:italic;font-size:.66rem;letter-spacing:.06em;color:var(--acc)}
+  .brand .s{font-family:var(--script);font-size:2.1rem;color:var(--acc);margin-top:2px}
+  .brand .t{font-size:.56rem;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+  .snav{margin-top:46px;display:flex;flex-direction:column;gap:2px}
+  .snav a{font-family:var(--serif);font-size:1.3rem;color:var(--ink);padding:9px 0;position:relative;width:max-content;transition:.2s}
+  .snav a::after{content:"";position:absolute;left:0;bottom:4px;height:1px;width:0;background:var(--acc);transition:.3s}
+  .snav a:hover{color:var(--acc)}.snav a:hover::after{width:100%}
+  .sfoot{margin-top:auto;font-size:.86rem;color:var(--muted);display:flex;flex-direction:column;gap:8px}
+  .sfoot a:hover{color:var(--acc)}.sfoot .est{font-family:var(--serif);font-style:italic;color:var(--ink)}
+  .soc{display:flex;gap:10px;margin-top:6px}
+  .soc a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:grid;place-content:center;transition:.25s}
+  .soc a:hover{background:var(--acc);border-color:var(--acc)}.soc a:hover svg{fill:#fff}.soc svg{width:17px;height:17px;fill:var(--ink)}
+
+  /* topbar mobile */
+  .top{display:none;position:fixed;inset:0 0 auto;height:64px;background:rgba(250,246,239,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:60;align-items:center;justify-content:space-between;padding:0 20px}
+  .burger{flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;display:flex}
+  .burger span{width:24px;height:2px;background:var(--ink)}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:55;opacity:0;visibility:hidden;transition:.3s}.scrim.show{opacity:1;visibility:visible}
+
+  /* main */
+  main{margin-left:var(--sbw)}
+  .inner{max-width:var(--maxw);margin:0 auto;padding:0 44px}
+  section{scroll-margin-top:30px}
+
+  .hero{position:relative;padding:54px 0 0}
+  .hero-img{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+  .hero-img img{width:100%;height:62vh;min-height:420px;object-fit:cover}
+  .hero-card{position:relative;margin:-90px 0 0 0;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:40px 44px;max-width:640px;box-shadow:var(--shadow)}
+  .hero-card h1{font-size:clamp(2.3rem,4.4vw,3.4rem);margin:14px 0 16px}
+  .hero-card h1 em{font-style:italic;color:var(--acc)}
+  .hero-card .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+
+  .sec{padding:clamp(4rem,7vw,6rem) 0}
+  .head{max-width:640px;margin-bottom:40px}
+  .head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-top:14px}
+
+  .about{display:grid;grid-template-columns:1.3fr .7fr;gap:50px;align-items:end}
+  .about .body{color:var(--muted)}.about .body p+p{margin-top:14px}
+  .minif{display:flex;flex-direction:column;gap:18px}
+  .minif .fig{border-left:2px solid var(--acc);padding-left:16px}
+  .minif .n{font-family:var(--serif);font-size:2.1rem;line-height:1}
+  .minif .l{font-size:.86rem;color:var(--muted)}
+
+  .offer{background:var(--sand);border-radius:14px;padding:clamp(2.5rem,5vw,4rem)}
+  .ogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}
+  .oitem .on{font-family:var(--serif);font-style:italic;color:var(--acc);font-size:1.1rem}
+  .oitem h3{font-size:1.3rem;margin:6px 0 6px}
+  .oitem p{font-size:.92rem;color:var(--muted)}
+
+  /* lookbook */
+  .proj{display:grid;grid-template-columns:1fr .82fr;gap:46px;align-items:center;margin-bottom:64px}
+  .proj:last-child{margin-bottom:0}
+  .proj .ph{border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+  .proj .ph img{width:100%;height:440px;object-fit:cover;transition:transform .8s}
+  .proj .ph:hover img{transform:scale(1.05)}
+  .proj.flip .txt{order:-1}
+  .proj .tag{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);font-weight:600}
+  .proj h3{font-size:1.9rem;margin:10px 0 12px}
+  .proj p{color:var(--muted)}
+  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:54px}
+  .strip figure{position:relative;border-radius:8px;overflow:hidden}
+  .strip img{width:100%;height:220px;object-fit:cover;transition:transform .7s}
+  .strip figure:hover img{transform:scale(1.06)}
+  .strip figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;color:#fff;font-size:.88rem;font-weight:600;background:linear-gradient(to top,rgba(30,24,18,.8),transparent)}
+
+  /* contact */
+  .cgrid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+  .clist{display:flex;flex-direction:column}
+  .ci{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+  .ci svg{width:19px;height:19px;color:var(--acc);flex:none}
+  .ci .k{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .ci .v{font-weight:600}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:30px;box-shadow:var(--shadow)}
+  .card h3{font-size:1.5rem}.card .sub{color:var(--muted);font-size:.92rem;margin:6px 0 18px}
+  .fld{margin-bottom:14px}.fld label{font-size:.78rem;font-weight:600;display:block;margin-bottom:6px}
+  .fld input,.fld textarea{width:100%;font-family:var(--sans);font-size:.95rem;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--cream)}
+  .fld input:focus,.fld textarea:focus{outline:none;border-color:var(--acc);background:#fff}
+  .fld textarea{min-height:96px;resize:vertical}.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .map{margin-top:16px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}.map iframe{width:100%;height:210px;border:0;display:block}
+
+  footer{border-top:1px solid var(--line);margin-top:40px;padding:28px 0;color:var(--muted);font-size:.86rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+  body.js .rev{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s cubic-bezier(.2,.7,.2,1)}
+  body.js .rev.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .side{transform:translateX(-100%);transition:.35s;width:280px}
+    .side.open{transform:none;box-shadow:var(--shadow)}
+    .top{display:flex}main{margin-left:0;padding-top:64px}
+    .about,.cgrid{grid-template-columns:1fr;gap:32px}
+    .proj{grid-template-columns:1fr;gap:24px}.proj.flip .txt{order:0}
+    .ogrid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:600px){
+    .inner{padding:0 22px}.ogrid,.strip,.row2{grid-template-columns:1fr}
+    .hero-card{padding:28px 24px;margin-top:-60px}.proj .ph img{height:300px}
+  }
+</style>
+</head>
+<body>
+<aside class="side" id="side">
+  <a href="#top" class="brand"><span class="f">F.P.H.U.</span><span class="s">Cichoński</span><span class="t">Producent Mebli</span></a>
+  <nav class="snav">
+    <a href="#o-firmie">O firmie</a><a href="#oferta">Oferta</a><a href="#realizacje">Realizacje</a><a href="#kontakt">Kontakt</a>
+  </nav>
+  <div class="sfoot">
+    <span class="est">Brzesko · od 1999</span>
+    <a href="tel:+48503049587">tel. 503 049 587</a>
+    <a href="mailto:jcichonski@poczta.onet.pl">jcichonski@poczta.onet.pl</a>
+    <div class="soc"><a href="https://www.facebook.com/people/Producent-Mebli-FHUP-JCicho%C5%84ski/100067057274982/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a></div>
+  </div>
+</aside>
+<div class="top">
+  <a href="#top" class="brand"><span class="s" style="font-size:1.5rem">Cichoński</span></a>
+  <button class="burger" id="bg" aria-label="Menu"><span></span><span></span><span></span></button>
+</div>
+<div class="scrim" id="sc"></div>
+
+<main>
+<a id="top"></a>
+<section class="hero"><div class="inner">
+  <div class="hero-img rev"><img src="images/hero-deb.jpg" alt="Kuchnia dębowa na wymiar — F.P.H.U. Cichoński"></div>
+  <div class="hero-card rev">
+    <span class="eyebrow">Producent mebli na wymiar · Brzesko</span>
+    <h1>Meble szyte na miarę Twojego <em>wnętrza</em></h1>
+    <p class="lead">Od 1999 roku projektujemy i wykonujemy kuchnie, szafy i zabudowy dopasowane do każdej przestrzeni — z dbałością o jakość i detal.</p>
+    <div class="acts"><a href="#realizacje" class="btn btn-acc">Zobacz realizacje</a><a href="#kontakt" class="btn btn-out">Bezpłatna wycena</a></div>
+  </div>
+</div></section>
+
+<section class="sec" id="o-firmie"><div class="inner about">
+  <div class="rev">
+    <span class="eyebrow">O firmie</span>
+    <h2 style="margin:14px 0 20px">Pracownia mebli z&nbsp;ponad ćwierćwieczną historią</h2>
+    <div class="body">
+      <p>F.P.H.U. „Cichoński” to prywatna firma specjalizująca się w produkcji szerokiego asortymentu mebli do wyposażenia wnętrz. Siedzibę mamy w Brzesku, a na rynku działamy nieprzerwanie od 1999 roku.</p>
+      <p>Przez ponad ćwierć wieku zyskaliśmy miano uznanego producenta mebli. Każde zlecenie prowadzimy indywidualnie — od pomiaru i projektu, przez dobór materiałów, aż po montaż u klienta.</p>
+    </div>
+  </div>
+  <div class="minif rev">
+    <div class="fig"><div class="n">1999</div><div class="l">Rok założenia</div></div>
+    <div class="fig"><div class="n">25+ lat</div><div class="l">Doświadczenia</div></div>
+    <div class="fig"><div class="n">100%</div><div class="l">Meble na wymiar</div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="oferta"><div class="inner">
+  <div class="offer rev">
+    <div class="head" style="margin-bottom:0"><span class="eyebrow">Oferta</span><h2 style="margin-top:12px">Co produkujemy</h2></div>
+    <div class="ogrid">
+      <div class="oitem"><div class="on">01</div><h3>Kuchnie na wymiar</h3><p>Zabudowy projektowane pod konkretne wnętrze i sprzęty AGD.</p></div>
+      <div class="oitem"><div class="on">02</div><h3>Szafy i garderoby</h3><p>Szafy wnękowe, przesuwne i pojemne garderoby.</p></div>
+      <div class="oitem"><div class="on">03</div><h3>Meble pokojowe</h3><p>Witryny, komody, szafki RTV i regały do salonu.</p></div>
+      <div class="oitem"><div class="on">04</div><h3>Sypialnie</h3><p>Łóżka, komody i szafki nocne w spójnym stylu.</p></div>
+      <div class="oitem"><div class="on">05</div><h3>Meble biurowe</h3><p>Biurka, kontenery i zabudowy do gabinetu.</p></div>
+      <div class="oitem"><div class="on">06</div><h3>Meble nietypowe</h3><p>Realizacje niestandardowe na indywidualne zamówienie.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="realizacje"><div class="inner">
+  <div class="head rev"><span class="eyebrow">Realizacje</span><h2>Lookbook naszych prac</h2><p class="lead" style="margin-top:12px">Dwie wybrane realizacje oraz galeria innych projektów.</p></div>
+
+  <div class="proj rev">
+    <div class="ph"><img src="images/deb-1.jpg" alt="Kuchnia dębowa ze złotą mozaiką"></div>
+    <div class="txt"><div class="tag">Realizacja 01</div><h3>Kuchnia dębowa ze złotą mozaiką</h3><p>Ciepła zabudowa w okleinie drewnianej z charakterystyczną złotą mozaiką i czarnym blatem. Funkcjonalny układ w kształcie litery U z barkiem oddzielającym kuchnię od salonu.</p></div>
+  </div>
+  <div class="proj flip rev">
+    <div class="ph"><img src="images/biala-1.jpg" alt="Biała kuchnia z czarną wyspą"></div>
+    <div class="txt"><div class="tag">Realizacja 02</div><h3>Biała kuchnia z czarną wyspą</h3><p>Minimalistyczne, lakierowane fronty bez uchwytów z efektowną czarną wyspą i sufitowym okapem. Czysta, nowoczesna forma utrzymana w kontraście bieli i grafitu.</p></div>
+  </div>
+
+  <div class="strip rev">
+    <figure><img src="images/deb-4.jpg" alt="Zabudowa AGD w drewnie"><figcaption>Zabudowa AGD</figcaption></figure>
+    <figure><img src="images/biala-2.jpg" alt="Wyspa z płytą indukcyjną"><figcaption>Wyspa z indukcją</figcaption></figure>
+    <figure><img src="images/deb-3.jpg" alt="Kuchnia z barkiem"><figcaption>Kuchnia z barkiem</figcaption></figure>
+  </div>
+  <div class="rev" style="margin-top:34px"><a href="https://www.facebook.com/people/Producent-Mebli-FHUP-JCicho%C5%84ski/100067057274982/" target="_blank" rel="noopener" class="btn btn-out">Więcej realizacji na Facebooku</a></div>
+</div></section>
+
+<section class="sec" id="kontakt"><div class="inner cgrid">
+  <div class="rev">
+    <span class="eyebrow">Kontakt</span>
+    <h2 style="margin:12px 0 14px;font-size:clamp(1.9rem,3.6vw,2.7rem)">Zaplanujmy Twoje meble</h2>
+    <p class="lead">Zadzwoń lub napisz — chętnie doradzimy i przygotujemy bezpłatną wycenę.</p>
+    <div class="clist" style="margin-top:24px">
+      <a class="ci" href="https://maps.google.com/?q=ul.+Solskiego+37,+Brzesko" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.3-7-11a7 7 0 0 1 14 0c0 5.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><div class="k">Adres</div><div class="v">ul. Solskiego 37, 32-800 Brzesko</div></span></a>
+      <a class="ci" href="tel:+48503049587"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><div class="k">Telefon</div><div class="v">503 049 587</div></span></a>
+      <a class="ci" href="mailto:jcichonski@poczta.onet.pl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span><div class="k">E-mail</div><div class="v">jcichonski@poczta.onet.pl</div></span></a>
+      <a class="ci" href="http://www.cichonski.com.pl/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span><div class="k">Strona</div><div class="v">cichonski.com.pl</div></span></a>
+    </div>
+  </div>
+  <div class="card rev">
+    <h3>Zapytaj o wycenę</h3><p class="sub">Wypełnij formularz — odezwiemy się wkrótce.</p>
+    <form id="qf">
+      <div class="row2"><div class="fld"><label>Imię i nazwisko</label><input name="n" required placeholder="Jan Kowalski"></div><div class="fld"><label>Telefon</label><input name="p" placeholder="500 000 000"></div></div>
+      <div class="fld"><label>E-mail</label><input type="email" name="e" placeholder="jan@przyklad.pl"></div>
+      <div class="fld"><label>Wiadomość</label><textarea name="m" required placeholder="Opisz, jakie meble Cię interesują..."></textarea></div>
+      <button class="btn btn-acc" style="width:100%;justify-content:center">Wyślij wiadomość</button>
+    </form>
+    <div class="map"><iframe title="Mapa" loading="lazy" src="https://maps.google.com/maps?q=ul.%20Solskiego%2037,%20Brzesko&z=15&output=embed"></iframe></div>
+  </div>
+</div>
+<div class="inner"><footer><span>© <span id="yr"></span> F.P.H.U. „Cichoński”</span><span>Producent mebli · Brzesko · od 1999 roku</span></footer></div>
+</section>
+</main>
+
+<script>
+document.body.classList.add('js');
+document.getElementById('yr').textContent=new Date().getFullYear();
+const side=document.getElementById('side'),sc=document.getElementById('sc');
+const op=()=>{side.classList.add('open');sc.classList.add('show')},cl=()=>{side.classList.remove('open');sc.classList.remove('show')};
+document.getElementById('bg').onclick=op;sc.onclick=cl;side.querySelectorAll('a').forEach(a=>a.onclick=()=>{if(window.innerWidth<=980)cl()});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.rev').forEach(el=>io.observe(el));
+document.getElementById('qf').addEventListener('submit',e=>{e.preventDefault();const f=e.target;
+const b=encodeURIComponent('Imię i nazwisko: '+f.n.value+'\nTelefon: '+f.p.value+'\nE-mail: '+f.e.value+'\n\n'+f.m.value);
+location.href='mailto:jcichonski@poczta.onet.pl?subject='+encodeURIComponent('Zapytanie o wycenę — '+f.n.value)+'&body='+b;});
+</script>
+</body>
+</html>
